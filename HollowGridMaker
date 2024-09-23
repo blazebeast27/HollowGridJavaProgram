@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class HollowSquareGrid {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+
+    // Ask for the size of the grid
+    System.out.print("Please enter size of grid: ");
+    int gridSize = scanner.nextInt();
+
+
+    // Ask for the size of each cell inside the grid
+    System.out.print("Please enter size of each cell inside of the grid: ");
+    int cellSize = scanner.nextInt();
+
+
+
+    // Print the grid of hollow squares
+    for (int i = 0; i < gridSize; i++) {
+        // Print the top border of each row of cells
+        for (int k = 0; k < gridSize; k++) {
+            System.out.print("+");
+            for (int l = 0; l < cellSize; l++) {
+                System.out.print("-");
+            }
+        }
+        System.out.println("+");
+
+
+        // Print the sides of each cell
+        for (int j = 0; j < cellSize; j++) {
+            for (int k = 0; k < gridSize; k++) {
+                System.out.print("|");
+                for (int l = 0; l < cellSize; l++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("|");
+        }
+    }
+
+
+    // Print the bottom border of the last row of cells
+    for (int k = 0; k < gridSize; k++) {
+        System.out.print("+");
+        for (int l = 0; l < cellSize; l++) {
+            System.out.print("-");
+        }
+    }
+    System.out.println("+");
+}
+}
